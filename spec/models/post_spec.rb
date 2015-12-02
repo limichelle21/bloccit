@@ -12,5 +12,13 @@ RSpec.describe Post, type: :model do
 			expect(post).to respond_to(:body)
 		end
 	end
+
+	describe "#spam" do
+		it "replaces the first title with spam" do
+			Post.create(title: "First Title", body: "First body")
+			title = post.title.first.spam
+			expect(title).to eq("SPAM")
+		end
+	end
   
 end
