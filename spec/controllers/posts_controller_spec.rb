@@ -91,7 +91,7 @@ RSpec.describe PostsController, :type => :controller do
   end
 
   describe "PUT update" do 
-    it "updates post withe expected attributes" do
+    it "updates post with the expected attributes" do
       new_title = RandomData.random_sentence
       new_body = RandomData.random_paragraph
 
