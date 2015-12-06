@@ -25,6 +25,12 @@ RSpec.describe User, type: :model do
 		it "should respond to email" do
 			expect(user).to respond_to(:email)
 		end
+
+		it "should properly format user name" do
+			user.name = "bloccit user"
+			user.save
+			expect(user.name).to eq("Bloccit User")
+		end
 	end
 
 
@@ -45,4 +51,5 @@ RSpec.describe User, type: :model do
 			expect(user_with_invalid_email_format).to_not be_valid
 		end
 	end
+
 end
