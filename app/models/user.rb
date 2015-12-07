@@ -22,7 +22,8 @@ class User < ActiveRecord::Base
 
 	def name_format
 		full_name = []
-		name.split.each do |n| 
+		name1 = name.split(" ")
+		name1.each do |n| 
 			full_name << n.capitalize
 		end
 		self.name = full_name.join(" ")
