@@ -243,7 +243,7 @@ context "admin user" do
         new_name = RandomData.random_sentence
         new_description = RandomData.random_paragraph
 
-        put :update, id: my_topic.id, topic: {name: new_name, description: new_description}
+        put :update, id: my_topic.id, topic: { name: new_name, description: new_description}
 
         updated_topic = assigns(:topic)
         expect(updated_topic.id).to eq my_topic.id
@@ -255,7 +255,7 @@ context "admin user" do
         new_name = RandomData.random_sentence
         new_description = RandomData.random_paragraph
 
-        put :update, id: my_topic.id, topic: {name: new_name, description: new_description}
+        put :update, id: my_topic.id, topic: { name: new_name, description: new_description}
         expect(response).to redirect_to my_topic
       end
     end
