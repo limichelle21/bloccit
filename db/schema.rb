@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20151218033940) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.integer  "rating_id"
+    t.integer  "rating"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20151218033940) do
     t.integer  "rating"
   end
 
-  add_index "posts", ["rating_id"], name: "index_posts_on_rating_id"
+  
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 20151218033940) do
     t.text     "description"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.integer  "rating_id"
+    t.integer  "rating"
   end
 
   add_index "topics", ["rating_id"], name: "index_topics_on_rating_id"
