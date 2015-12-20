@@ -78,11 +78,17 @@ RSpec.describe Post, type: :model do
 		end
 
 		describe "#create_vote" do
-			it "creates an up vote when a post is saved" do
+	
+			it "creates an up vote when a post is created" do
 				old_vote_count = post.votes.count
-				post.send(create_vote)
+				post.send(:create_vote)
 				expect(post.votes.count).to eq(old_vote_count + 1)
 			end
+
+			it "associates the first vote to the post user" do
+				expect(post.votes.first.user).to eq(post.user)
+			end
+
 		end
 	end
 end

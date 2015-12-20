@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
 	has_many :labelings, as: :labelable
 	has_many :labels, through: :labelings
 
+	after_create :create_vote
 	default_scope { order('rank DESC')}
 
 	validates :title, length: { minimum: 5}, presence: true
@@ -35,7 +36,7 @@ class Post < ActiveRecord::Base
 
 	private
 
-	def create_vote(post, value)
+	def create_vote
 		user.votes.create(post: self, value: 1)
 	end
 
