@@ -76,5 +76,13 @@ RSpec.describe Post, type: :model do
 				expect(post.rank).to eq(old_rank - 1)
 			end
 		end
+
+		describe "#create_vote" do
+			it "creates an up vote when a post is saved" do
+				old_vote_count = post.votes.count
+				post.send(create_vote)
+				expect(post.votes.count).to eq(old_vote_count + 1)
+			end
+		end
 	end
 end

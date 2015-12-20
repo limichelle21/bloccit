@@ -33,4 +33,10 @@ class Post < ActiveRecord::Base
 	end
 
 
+	private
+
+	def create_vote(post, value)
+		user.votes.create(post: self, value: 1)
+	end
+
 end
