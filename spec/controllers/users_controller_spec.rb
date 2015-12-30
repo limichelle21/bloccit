@@ -82,8 +82,28 @@ RSpec.describe UsersController, type: :controller do
 			get :show, {id: factory_user.id}
 			expect(assigns(:user)).to eq(factory_user)
 		end
-	end
 
+		#it "returns favorited posts by the current user" do 
+		#	favorite = post.favorite
+		#end	
+
+		#it "returns the proper Gravatar URL for the post's user" do 
+		#	user = post.user
+		#	expected_gravatar = 
+		#end
+
+		it "returns the correct number of votes for the favorited post" do 
+			vote = Vote.create(value: 1)
+			expect(vote.count).to eq(1)
+		end
+
+		it "returns the correct number of comments for the favorited post" do 
+			comment = Comment.create(body: "comment")
+			expect(comments.count).to eq(1)
+		end
+
+
+	end
 
 
 
