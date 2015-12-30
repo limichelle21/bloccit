@@ -34,4 +34,8 @@ module RandomData
 		"#{random_word}@#{random_word}.#{random_word}"
 	end
 
+	def random_num
+		[-1, 1].sample
+	end
+
 end
