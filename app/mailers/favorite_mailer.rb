@@ -3,7 +3,6 @@ class FavoriteMailer < ApplicationMailer
 
 	def new_comment(user, post, comment)
 		headers["Message-ID"] = "<comments/#{comment.id}@your-app-name.example>"
-		# line 5 causing errors in Rails c - undefined method .id for nil
 		headers["In-Reply-To"] = "<post/#{post.id}@your-app-name.example>"
 		headers["References"] = "<post/#{post.id}@your-app-name.example>"
 
