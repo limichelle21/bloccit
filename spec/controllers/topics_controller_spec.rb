@@ -40,6 +40,11 @@ context "guest" do
 			get :show, {id: my_topic.id}
 			expect(assigns(:topic)).to eq(my_topic)
 		end
+
+		it "redirects from private topics" do 
+			get :show, {id: my_private_topic.id}
+			expect(response).to redirect_to(new_session_path)
+		end
 	end
 
 	describe "GET new" do
