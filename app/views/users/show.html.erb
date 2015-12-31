@@ -37,7 +37,7 @@
 <ul>
 	<div class="row">
 		<div class="media">
-			<% @user.favorites.each do |f| %>
+			<% @favorites.each do |f| %>
 			<div class="col-md-8">
 				<div class="media pull-left">
 				<%= image_tag f.post.user.avatar_url(48) %>
