@@ -3,13 +3,13 @@ class VotesController < ApplicationController
 
 	def up_vote
 		update_vote(1)
-		redirect_to :back
+		#redirect_to :back
 	end
 
 
 	def down_vote
 		update_vote(-1)
-		redirect_to :back
+		#redirect_to :back
 	end
 
 	private
@@ -19,15 +19,15 @@ class VotesController < ApplicationController
 		@vote = @post.votes.where(user_id: current_user.id).first
 
 		if @vote
-			@vote. update_attribute(:value, new_value)
+			@vote.update_attribute(:value, new_value)
 		else
 			@vote = current_user.votes.create(value: new_value, post: @post)
 		end
 		
+		respond_to do|format|
+			format.html
+			format.js
+		end
 	end
-
-
-
-
 
 end
