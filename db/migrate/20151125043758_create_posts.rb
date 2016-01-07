@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :body
 
       t.timestamps null: false
+      add_foreign_key :rating_id
     end
   end
 end

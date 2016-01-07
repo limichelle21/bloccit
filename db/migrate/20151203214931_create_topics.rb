@@ -6,6 +6,7 @@ class CreateTopics < ActiveRecord::Migration
       t.text :description
 
       t.timestamps null: false
+      add_foreign_key :rating_id
     end
   end
 end

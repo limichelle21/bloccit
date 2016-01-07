@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post= @topic.posts.build(post_params)
     @post.user = current_user
     @post.labels = Label.update_labels(params[:post][:labels])
-    @post.rating = Rating.update_rating(params[:post][:rating]).id if params[:post][:rating]
+    @post.rating = Rating.update_rating(params[:post][:rating]) if params[:post][:rating]
     
     	if @post.save
         
