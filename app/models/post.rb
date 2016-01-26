@@ -39,7 +39,7 @@ class Post < ActiveRecord::Base
 	private
 
 	def favorite_post
-		favorite.create!(post: self, user: user)
+		favorites.create!(post: self, user: user)
 	end
 		
 	def send_post_email
