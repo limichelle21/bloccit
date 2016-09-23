@@ -2,34 +2,12 @@
 
 ## BLOCCIT - a Reddit replica to teach the fundamentals of web development and Rails.
 
+Users are able to create posts, share links, add comments, and vote on shared content.
+
 Made with my mentor at [Bloc](http://bloc.io)
 
 
-Default: 
+Ruby version 2.2.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Utilizes Boostrap for styling, Bcrypt for encryption, and a custom-built authentication. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
